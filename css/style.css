@@ -369,6 +369,49 @@ nav {
 }
 
 
+/* ============================
+   ABOUT SECTION STYLES
+   Styles for layout, text, and
+   image alignment in the About section
+============================ */
+
+/* Container: use grid layout with spacing */
+.about__container {
+    display: grid; /* Places image + text in grid */
+    gap: 2rem; /* Space between columns (mobile: stacked) */
+    overflow: hidden; /* Prevents any overflow content */
+}
+
+/* Image styling */
+.about__image img {
+    max-width: 450px; /* Limits image size */
+    margin-inline: auto; /* Centers image horizontally */
+}
+
+/* Section header spacing inside content */
+.about__content .section__header {
+    margin-bottom: 2rem; /* Space below heading */
+}
+
+/* Content block with decorative left border */
+.about__content>div {
+    padding-left: 2rem; /* Push text inward */
+    border-left: 2px solid var(--secondary-color); /* Vertical accent line */
+}
+
+/* Paragraph styling */
+.about__content p {
+    margin-bottom: 1rem; /* Space between paragraphs */
+    color: var(--text-light); /* Softer text color */
+    line-height: 1.75rem; /* Improves readability */
+}
+
+/* Button wrapper spacing */
+.about__btn {
+    margin-top: 2rem; /* Adds space above the button */
+}
+
+
 
 /* ------------------- 
    Responsive (Tablet & Desktop Views)
@@ -480,6 +523,15 @@ nav {
     /* Place input groups side by side (2 columns) */
     .book__container .input__row:not(:last-child) {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about__container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+
+    .about__content {
+        grid-area: 1/1/2/2;
     }
 }
 
