@@ -206,10 +206,116 @@ nav {
     background-color: var(--primary-color);
 }
 
+
+
+/* ================= MENU SECTION ================= */
+.menu {
+    position: relative;
+    /* Allows ::before background overlay */
+    isolation: isolate;
+    /* Ensures child stacking is contained */
+}
+
+/* Background overlay on the right side of the section */
+.menu::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: calc(50% - 450px);
+    /* Dynamic width based on container */
+    background-color: #2a1d1c;
+    /* Dark background accent */
+    z-index: -1;
+    /* Keeps it behind the content */
+}
+
+/* Section header (Popular Menu) */
+.menu__container .section__header {
+    margin-bottom: 1rem;
+}
+
+/* "View All" link style */
+.menu__container a {
+    display: inline-block;
+    margin-bottom: 4rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    /* Brand color */
+    transition: 0.3s;
+}
+
+/* Hover effect for "View All" link */
+.menu__container a:hover {
+    color: var(--primary-color-dark);
+}
+
+/* Grid layout for menu cards */
+.menu__grid {
+    display: grid;
+    gap: 2rem 1rem;
+    /* Vertical & horizontal spacing */
+}
+
+/* Single menu card */
+.menu__card {
+    max-width: 300px;
+    margin-inline: auto;
+    /* Center horizontally */
+    box-shadow: 20px 5px 30px rgba(0, 0, 0, 0.4);
+    /* Shadow for depth */
+    transition: 0.3s;
+    /* Smooth hover animation */
+}
+
+/* Card hover effect (lift up) */
+.menu__card:hover {
+    transform: translateY(-1rem);
+}
+
+/* Card content wrapper */
+.menu__card__content {
+    padding: 1rem;
+    background-color: var(--white);
+}
+
+/* Dish name */
+.menu__card__content h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+}
+
+/* Price */
+.menu__card__content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+
+
 /* ------------------- 
-   Responsive (Desktop view)
+   Responsive (Tablet & Desktop Views)
 ------------------- */
+
+/* For small tablets and up (min-width: 540px) */
+@media (width > 540px) {
+
+    /* Show menu items in 2 columns instead of 1 */
+    .menu__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For tablets and desktops (min-width: 768px) */
 @media (width > 768px) {
+
+    /* Desktop navigation bar styling */
     nav {
         position: static;
         padding: 2rem 1rem;
@@ -221,22 +327,24 @@ nav {
         gap: 1rem;
     }
 
+    /* Nav header adjustments */
     .nav__header {
         flex: 1;
         padding: 0;
         background-color: transparent;
     }
 
+    /* Larger logo size on desktop */
     .nav__logo img {
         max-width: 125px;
     }
 
-    /* Hide mobile menu button */
+    /* Hide mobile hamburger menu button */
     .nav__menu__btn {
         display: none;
     }
 
-    /* Desktop nav links */
+    /* Horizontal nav links for desktop */
     .nav__links {
         position: static;
         width: fit-content;
@@ -245,14 +353,15 @@ nav {
         gap: 3rem;
         background-color: transparent;
         transform: none !important;
+        /* Override mobile animation */
     }
 
-    /* Link hover effect in desktop */
+    /* Hover effect for desktop links */
     .nav__links a:hover {
         color: var(--primary-color);
     }
 
-    /* Header content aligned left for desktop */
+    /* Align hero content left on desktop */
     .header__container h1 {
         max-width: 600px;
         text-align: left;
@@ -263,7 +372,27 @@ nav {
         text-align: left;
     }
 
+    /* Buttons aligned to left for desktop */
     .header__btns {
         justify-content: flex-start;
+    }
+
+    /* Show menu items in 4 columns on desktop */
+    .menu__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* For large desktops (min-width: 1024px) */
+@media (width > 1024px) {
+
+    /* Reduce spacing between menu items */
+    .menu__grid {
+        gap: 1.5rem;
+    }
+
+    /* Add extra padding inside menu cards */
+    .menu__card__content {
+        padding: 1.5rem;
     }
 }
