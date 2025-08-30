@@ -27,7 +27,7 @@
             <div class="nav__header">
                 <!-- Logo Section -->
                 <div class="nav__logo">
-                    <a href="#">
+                    <a href="#home">
                         <img src="assets/logo.png" alt="logo" />
                     </a>
                 </div>
@@ -40,7 +40,7 @@
 
             <!-- Navigation Links -->
             <ul class="nav__links" id="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#about">About Us</a></li>
             </ul>
@@ -57,8 +57,8 @@
 
             <!-- Buttons -->
             <div class="header__btns">
-                <button class="btn">Let's Eat</button>
-                <button class="btn">Book a Table</button>
+                <a href="#menu" class="btn">Let's Eat</a>
+                <a href="#book" class="btn">Book a Table</a>
             </div>
         </div>
     </header>
@@ -73,10 +73,11 @@
             <h2 class="section__header">Popular Menu</h2>
 
             <!-- "View All" link with arrow icon -->
-            <a href="#">
+            <a href="#menu">
                 View All
                 <i class="ri-arrow-right-long-line"></i>
             </a>
+
 
             <!-- Menu items displayed in a grid layout -->
             <div class="menu__grid">
@@ -124,7 +125,7 @@
     <!-- =========================
      Book a Table Section
     ========================= -->
-    <section class="book">
+    <section class="book" id="book">
         <!-- Container for proper spacing and layout -->
         <div class="section__container book__container">
 
@@ -282,7 +283,7 @@
         </div>
     </footer>
 
-    
+
     <!-- ScrollReveal library for animations -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
