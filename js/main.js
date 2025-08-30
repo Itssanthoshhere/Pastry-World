@@ -55,3 +55,28 @@ ScrollReveal().reveal(".header__btns", {
     ...scrollRevealOption,
     delay: 1000,
 });
+
+
+/* ============================
+   ABOUT SECTION ANIMATIONS
+   Using ScrollReveal to animate
+   image and text as they appear
+============================ */
+
+/* Reveal image from the right */
+ScrollReveal().reveal(".about__image img", {
+    ...scrollRevealOption, // base animation settings (distance, duration, etc.)
+    origin: "right", // animate from the right side
+});
+
+/* Reveal section header with slight delay */
+ScrollReveal().reveal(".about__content .section__header", {
+    ...scrollRevealOption,
+    delay: 500, // start 0.5s later for staggered effect
+});
+
+/* Reveal text block + button with more delay */
+ScrollReveal().reveal(".about__content > div", {
+    ...scrollRevealOption,
+    delay: 1000, // start 1s later for smooth sequence
+});
