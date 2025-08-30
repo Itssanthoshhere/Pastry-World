@@ -121,6 +121,57 @@
     </section>
 
 
+    <!-- =========================
+     Book a Table Section
+    ========================= -->
+    <section class="book">
+        <!-- Container for proper spacing and layout -->
+        <div class="section__container book__container">
+
+            <!-- Booking Form -->
+            <form action="/">
+                <!-- Form Heading -->
+                <h4>Book a Table</h4>
+
+                <!-- First Row: First & Last Name -->
+                <div class="input__row">
+                    <!-- First Name Field -->
+                    <div class="input__group">
+                        <label for="firstName">FIRST NAME</label>
+                        <input type="text" id="firstName" name="firstName" />
+                    </div>
+
+                    <!-- Last Name Field -->
+                    <div class="input__group">
+                        <label for="lastName">LAST NAME</label>
+                        <input type="text" id="lastName" name="lastName" />
+                    </div>
+                </div>
+
+                <!-- Second Row: Date & Number of Persons -->
+                <div class="input__row">
+                    <!-- Date Field -->
+                    <div class="input__group">
+                        <label for="date">DATE</label>
+                        <input type="date" id="date" name="date" />
+                    </div>
+
+                    <!-- Person Field -->
+                    <div class="input__group">
+                        <label for="person">PERSON</label>
+                        <input type="text" id="person" name="person" placeholder="e.g. 2" />
+                    </div>
+                </div>
+
+                <!-- Third Row: Submit Button -->
+                <div class="input__row">
+                    <button class="btn" type="submit">BOOK A TABLE</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
 
     <!-- JavaScript File -->
     <script src="js/main.js"></script>

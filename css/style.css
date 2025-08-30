@@ -65,7 +65,7 @@
 
 /* ------------------- 
    Generic Elements
-------------------- */
+   ------------------- */
 img {
     display: flex;
     width: 100%;
@@ -91,7 +91,7 @@ body {
 
 /* ------------------- 
    Header Section
-------------------- */
+   ------------------- */
 header {
     min-height: 75vh;
     background-image: url("/assets/header-bg.jpg");
@@ -102,7 +102,7 @@ header {
 
 /* ------------------- 
    Navigation Styles
-------------------- */
+   ------------------- */
 nav {
     position: fixed;
     /* Sticks nav to top */
@@ -145,8 +145,7 @@ nav {
     padding: 2rem;
     background-color: var(--primary-color);
     transition: transform 0.5s;
-    z-index: -1;
-    /* Hidden initially */
+    z-index: -1; /* Hidden initially */
 }
 
 /* Nav links visible when menu is open */
@@ -210,10 +209,8 @@ nav {
 
 /* ================= MENU SECTION ================= */
 .menu {
-    position: relative;
-    /* Allows ::before background overlay */
-    isolation: isolate;
-    /* Ensures child stacking is contained */
+    position: relative; /* Allows ::before background overlay */
+    isolation: isolate; /* Ensures child stacking is contained */
 }
 
 /* Background overlay on the right side of the section */
@@ -223,12 +220,9 @@ nav {
     top: 0;
     right: 0;
     height: 100%;
-    width: calc(50% - 450px);
-    /* Dynamic width based on container */
-    background-color: #2a1d1c;
-    /* Dark background accent */
-    z-index: -1;
-    /* Keeps it behind the content */
+    width: calc(50% - 450px); /* Dynamic width based on container */
+    background-color: #2a1d1c; /* Dark background accent */
+    z-index: -1; /* Keeps it behind the content */
 }
 
 /* Section header (Popular Menu) */
@@ -242,8 +236,7 @@ nav {
     margin-bottom: 4rem;
     font-size: 1rem;
     font-weight: 500;
-    color: var(--primary-color);
-    /* Brand color */
+    color: var(--primary-color); /* Brand color */
     transition: 0.3s;
 }
 
@@ -255,19 +248,15 @@ nav {
 /* Grid layout for menu cards */
 .menu__grid {
     display: grid;
-    gap: 2rem 1rem;
-    /* Vertical & horizontal spacing */
+    gap: 2rem 1rem; /* Vertical & horizontal spacing */
 }
 
 /* Single menu card */
 .menu__card {
     max-width: 300px;
-    margin-inline: auto;
-    /* Center horizontally */
-    box-shadow: 20px 5px 30px rgba(0, 0, 0, 0.4);
-    /* Shadow for depth */
-    transition: 0.3s;
-    /* Smooth hover animation */
+    margin-inline: auto; /* Center horizontally */
+    box-shadow: 20px 5px 30px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+    transition: 0.3s; /* Smooth hover animation */
 }
 
 /* Card hover effect (lift up) */
@@ -298,6 +287,88 @@ nav {
 }
 
 
+/* ============================
+   Book a Table Section Styles
+============================ */
+.book {
+    /* Space above and below the section */
+    margin-block: 5rem;
+
+    /* Background image of the booking section */
+    background-image: url("/assets/book.jpg");
+    background-size: cover; /* Cover entire section */
+    background-position: center center; /* Keep image centered */
+    background-repeat: no-repeat; /* Prevent repeating */
+}
+
+/* ============================
+   Form Container Styling
+============================ */
+.book__container form {
+    max-width: 600px; /* Limit form width for readability */
+    padding: 1rem; /* Inner spacing */
+    display: grid; /* Use grid for form layout */
+    gap: 2rem; /* Space between rows */
+    background-color: #261d1c; /* Dark background for contrast */
+    transform: translateY(10rem); /* Push form downward for overlap effect */
+}
+
+/* ============================
+   Form Heading (Book a Table)
+============================ */
+.book__container h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--header-font); /* Use defined header font */
+    color: var(--white);
+}
+
+/* ============================
+   Input Row Layout
+============================ */
+.book__container .input__row {
+    display: grid; /* Stack inputs (mobile-first) */
+    gap: 1rem; /* Space between inputs */
+}
+
+/* ============================
+   Input Group (Label + Input)
+============================ */
+.book__container .input__group {
+    display: grid; /* Stack label above input */
+    gap: 10px; /* Space between label & input */
+}
+
+/* ============================
+   Label Styling
+============================ */
+.book__container label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--white); /* White text for visibility */
+}
+
+/* ============================
+   Input Field Styling
+============================ */
+.book__container input {
+    padding: 0.75rem 1rem; /* Comfortable typing space */
+    font-size: 1rem;
+    color: var(--white); /* White text inside input */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border: none; /* Remove default borders */
+    outline: none; /* Remove focus outline (can replace with custom later) */
+}
+
+/* ============================
+   Submit Button Styling
+============================ */
+.book__container .btn {
+    width: fit-content; /* Button only as wide as text */
+    margin-left: auto; /* Push button to the right */
+}
+
+
 
 /* ------------------- 
    Responsive (Tablet & Desktop Views)
@@ -312,10 +383,17 @@ nav {
     }
 }
 
-/* For tablets and desktops (min-width: 768px) */
+/* =========================================
+   Responsive Styles for Tablets & Desktops 
+   (applies when screen width > 768px)
+   ========================================= */
 @media (width > 768px) {
 
-    /* Desktop navigation bar styling */
+    /* -----------------------------
+       Navigation Bar (Desktop)
+    ----------------------------- */
+
+    /* Desktop nav bar becomes static (not fixed) */
     nav {
         position: static;
         padding: 2rem 1rem;
@@ -327,61 +405,84 @@ nav {
         gap: 1rem;
     }
 
-    /* Nav header adjustments */
+    /* Remove mobile background from header */
     .nav__header {
         flex: 1;
         padding: 0;
         background-color: transparent;
     }
 
-    /* Larger logo size on desktop */
+    /* Logo slightly bigger on desktop */
     .nav__logo img {
         max-width: 125px;
     }
 
-    /* Hide mobile hamburger menu button */
+    /* Hide hamburger menu (since desktop uses full menu) */
     .nav__menu__btn {
         display: none;
     }
 
-    /* Horizontal nav links for desktop */
+    /* Show nav links horizontally instead of vertically */
     .nav__links {
         position: static;
         width: fit-content;
         padding: 0;
-        flex-direction: row;
+        flex-direction: row; /* horizontal layout */
         gap: 3rem;
         background-color: transparent;
-        transform: none !important;
-        /* Override mobile animation */
+        transform: none !important; /* cancel mobile slide-down animation */
     }
 
-    /* Hover effect for desktop links */
+    /* Desktop nav link hover (changes color to primary) */
     .nav__links a:hover {
         color: var(--primary-color);
     }
 
-    /* Align hero content left on desktop */
+    /* -----------------------------
+       Hero Section (Desktop)
+    ----------------------------- */
+
+    /* Align hero heading to the left */
     .header__container h1 {
         max-width: 600px;
         text-align: left;
     }
 
+    /* Align hero paragraph to the left */
     .header__container p {
         max-width: 400px;
         text-align: left;
     }
 
-    /* Buttons aligned to left for desktop */
+    /* Align hero buttons to the left */
     .header__btns {
         justify-content: flex-start;
     }
 
-    /* Show menu items in 4 columns on desktop */
+    /* -----------------------------
+       Menu Section (Desktop)
+    ----------------------------- */
+
+    /* Display menu items in 4 columns */
     .menu__grid {
         grid-template-columns: repeat(4, 1fr);
     }
+
+    /* -----------------------------
+       Book a Table Form (Desktop)
+    ----------------------------- */
+
+    /* Add padding inside form */
+    .book__container form {
+        padding: 1.5rem; /* reduced for better layout */
+    }
+
+    /* Place input groups side by side (2 columns) */
+    .book__container .input__row:not(:last-child) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+
 
 /* For large desktops (min-width: 1024px) */
 @media (width > 1024px) {
