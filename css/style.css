@@ -413,6 +413,63 @@ nav {
 
 
 
+/* =========================
+   FOOTER STYLES
+   Styling for footer layout, links,
+   logo, and copyright bar
+========================= */
+
+/* Footer background */
+footer {
+    background-color: var(--secondary-color); /* Dark background for footer */
+}
+
+/* Footer container grid */
+.footer__container {
+    display: grid; /* Place footer columns in a grid layout */
+    gap: 4rem 2rem; /* Row gap: 4rem, Column gap: 2rem */
+}
+
+/* Footer logo */
+.footer__logo img {
+    max-width: 150px; /* Restrict logo size */
+}
+
+/* Column headings (e.g., Blogs, New Items, Social Media) */
+.footer__col h4 {
+    margin-bottom: 2rem; /* Space below headings */
+    font-size: 1.2rem; /* Slightly larger font */
+    font-weight: 600; /* Bold */
+    color: var(--white); /* White text */
+}
+
+/* List container for footer links */
+.footer__links {
+    display: grid; /* Stack links vertically */
+    gap: 1rem; /* Space between each link */
+}
+
+/* Footer links style */
+.footer__links a {
+    font-weight: 500; /* Medium font weight */
+    color: var(--extra-light); /* Softer text color */
+}
+
+/* Hover effect for footer links */
+.footer__links a:hover {
+    color: var(--primary-color); /* Highlight color on hover */
+}
+
+/* Footer bar (bottom strip) */
+.footer__bar {
+    padding: 1rem; /* Spacing inside */
+    font-size: 1rem; /* Standard font size */
+    color: var(--white); /* White text */
+    text-align: center; /* Centered text */
+}
+
+
+
 /* ------------------- 
    Responsive (Tablet & Desktop Views)
 ------------------- */
@@ -424,7 +481,20 @@ nav {
     .menu__grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .book__container form {
+        padding: 1.5rem;
+    }
+
+    .book__container .input__row:not(:last-child) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+
 
 /* =========================================
    Responsive Styles for Tablets & Desktops 
@@ -532,6 +602,10 @@ nav {
 
     .about__content {
         grid-area: 1/1/2/2;
+    }
+
+    .footer__container {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
