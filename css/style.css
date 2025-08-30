@@ -1,5 +1,11 @@
+/* ------------------- 
+   Import Google Fonts
+------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* ------------------- 
+   Root Variables (CSS Custom Properties)
+------------------- */
 :root {
     --primary-color: #f2994a;
     --primary-color-dark: #d48540;
@@ -12,12 +18,16 @@
     --header-font: "Noto Serif", serif;
 }
 
+/* Reset Styles (remove default spacing & set box model) */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* ------------------- 
+   Reusable Section Styles
+------------------- */
 .section__container {
     max-width: var(--max-width);
     margin: auto;
@@ -31,6 +41,9 @@
     color: var(--text-dark);
 }
 
+/* ------------------- 
+   Buttons
+------------------- */
 .btn {
     padding: 0.75rem 1.5rem;
     outline: none;
@@ -44,11 +57,15 @@
     cursor: pointer;
 }
 
+/* Button Hover Effect */
 .btn:hover {
     background-color: var(--primary-color-dark);
     border-color: var(--primary-color-dark);
 }
 
+/* ------------------- 
+   Generic Elements
+------------------- */
 img {
     display: flex;
     width: 100%;
@@ -72,6 +89,9 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+/* ------------------- 
+   Header Section
+------------------- */
 header {
     min-height: 75vh;
     background-image: url("/assets/header-bg.jpg");
@@ -80,13 +100,18 @@ header {
     background-repeat: no-repeat;
 }
 
+/* ------------------- 
+   Navigation Styles
+------------------- */
 nav {
     position: fixed;
+    /* Sticks nav to top */
     isolation: isolate;
     width: 100%;
     z-index: 9;
 }
 
+/* Nav header (logo + menu btn in mobile) */
 .nav__header {
     padding: 1rem;
     width: 100%;
@@ -106,6 +131,7 @@ nav {
     cursor: pointer;
 }
 
+/* Nav links (mobile) */
 .nav__links {
     position: absolute;
     bottom: 0;
@@ -120,8 +146,10 @@ nav {
     background-color: var(--primary-color);
     transition: transform 0.5s;
     z-index: -1;
+    /* Hidden initially */
 }
 
+/* Nav links visible when menu is open */
 .nav__links.open {
     transform: translateY(100%);
 }
@@ -136,6 +164,9 @@ nav {
     color: var(--text-dark);
 }
 
+/* ------------------- 
+   Hero/Header Content
+------------------- */
 .header__container h1 {
     margin-bottom: 2rem;
     font-size: 4rem;
@@ -159,10 +190,12 @@ nav {
     gap: 1rem;
 }
 
+/* Buttons inside hero */
 .header__btns .btn {
     min-width: 150px;
 }
 
+/* Second button styled differently */
 .header__btns .btn:nth-child(2) {
     border-color: var(--white);
     background-color: transparent;
@@ -173,10 +206,9 @@ nav {
     background-color: var(--primary-color);
 }
 
-
-
-
-
+/* ------------------- 
+   Responsive (Desktop view)
+------------------- */
 @media (width > 768px) {
     nav {
         position: static;
@@ -199,10 +231,12 @@ nav {
         max-width: 125px;
     }
 
+    /* Hide mobile menu button */
     .nav__menu__btn {
         display: none;
     }
 
+    /* Desktop nav links */
     .nav__links {
         position: static;
         width: fit-content;
@@ -213,10 +247,12 @@ nav {
         transform: none !important;
     }
 
+    /* Link hover effect in desktop */
     .nav__links a:hover {
         color: var(--primary-color);
     }
 
+    /* Header content aligned left for desktop */
     .header__container h1 {
         max-width: 600px;
         text-align: left;
